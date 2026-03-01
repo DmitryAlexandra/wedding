@@ -8,32 +8,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: #f9f7f4 url('https://images.wallpaperscraft.ru/image/single/svadba_buton_tsvety_126299_1920x1080.jpg') center/cover fixed;
+            background: linear-gradient(135deg, #fdf5f0 0%, #f9e9e1 50%, #f5e0d5 100%);
             color: #2c2c2c;
             line-height: 1.5;
             min-height: 100vh;
-            position: relative;
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(249, 247, 244, 0.7);
-            backdrop-filter: blur(2px);
-            z-index: 0;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(3px);
         }
         .hero { text-align: center; padding: 40px 0 20px; }
         .hero h1 { font-size: 42px; letter-spacing: 4px; font-weight: 400; color: #1a1a1a; }
@@ -146,7 +133,7 @@
     <div class="section">
         <div class="section-title">Памятка для гостей</div>
         <ul class="reminder-list">
-            <li><strong>Цветы и подарки</strong> Самое главное — будьте с нами в этот день! А если хотите порадовать нас, лучшим подарком станут ваше внимание и, возможно, помощь в создании нашего семейного уюта. Живые цветы просим не дарить — они завянут, а память об этом дне останется с нами.</li>
+            <li><strong>Цветы и подарки</strong> Самое главное — будьте с нами в этот день! А если хотите порадовать нас, лучшим подарком станут ваше внимание и, возможно, помощь в создании нашего семейного уюта. Вместо цветов просим дарить бутылку хорошего алкоголя, который будет радовать нас долгое время.</li>
             <li><strong>Паркинг</strong> Рядом с локацией есть платные городские парковки.</li>
         </ul>
     </div>
@@ -155,13 +142,13 @@
         <div class="column">
             <h3>Программа</h3>
             <h4 style="margin:20px 0 10px; color:#b59d7b;">Екатерининский зал</h4>
-            <div class="program-item"><div class="program-time">10:00-10:30</div><div class="program-desc">Сбор гостей</div></div>
-            <div class="program-item"><div class="program-time">10:30-11:30</div><div class="program-desc">Церемония</div></div>
-            <div class="program-item"><div class="program-time">11:30-12:00</div><div class="program-desc">Поздравления</div></div>
+            <div class="program-item"><div class="program-time">9:30-9:45</div><div class="program-desc">Сбор гостей</div></div>
+            <div class="program-item"><div class="program-time">10:00-10:30</div><div class="program-desc">Церемония</div></div>
+            <div class="program-item"><div class="program-time">10:45-12:00</div><div class="program-desc">Поздравления</div></div>
             <h4 style="margin:30px 0 10px; color:#b59d7b;">Moments Hall</h4>
             <div class="program-item"><div class="program-time">12:00-14:00</div><div class="program-desc">Фотосессия</div></div>
-            <div class="program-item"><div class="program-time">16:00-16:30</div><div class="program-desc">Сбор гостей</div></div>
-            <div class="program-item"><div class="program-time">16:30-20:00</div><div class="program-desc">Банкет</div></div>
+            <div class="program-item"><div class="program-time">15:00-15:45</div><div class="program-desc">Сбор гостей</div></div>
+            <div class="program-item"><div class="program-time">16:00-21:00</div><div class="program-desc">Банкет</div></div>
         </div>
         <div class="column">
             <h3>Место</h3>
