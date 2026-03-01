@@ -8,11 +8,33 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: #f9f7f4;
+            background: #f9f7f4 url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover fixed;
             color: #2c2c2c;
             line-height: 1.5;
+            min-height: 100vh;
+            position: relative;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(249, 247, 244, 0.8);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
         .hero { text-align: center; padding: 40px 0 20px; }
         .hero h1 { font-size: 42px; letter-spacing: 4px; font-weight: 400; color: #1a1a1a; }
         .hero-date { font-size: 20px; color: #b59d7b; margin: 20px 0; text-transform: uppercase; }
@@ -63,12 +85,32 @@
         footer { text-align: center; margin-top: 60px; padding: 40px 0; border-top: 1px solid #eee; color: #888; }
         .deadline { font-size: 20px; color: #b59d7b; margin: 30px 0; }
         .signature { font-size: 32px; font-weight: 300; margin: 20px 0; }
+        .qr-section {
+            background: rgba(255,255,255,0.5);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background: #fff;
+            border: 2px dashed #b59d7b;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .qr-placeholder i { font-size: 50px; color: #b59d7b; margin-bottom: 10px; }
         @media (max-width: 700px) {
             .two-columns { grid-template-columns: 1fr; }
             .names { font-size: 40px; }
             .timer-item .number { font-size: 36px; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <div class="container">
@@ -89,19 +131,22 @@
         <div class="greeting">В нашей жизни предстоят счастливые перемены! Мы хотим, чтобы в этот день рядом с нами были самые близкие и дорогие для нас люди. Будем рады разделить с вами чудесный праздник в день нашей свадьбы.</div>
     </div>
 
-    <div class="section">
-        <p style="color: #666; margin-bottom: 20px;">На свадьбе будет фотограф, который запечатлеет в кадрах все эмоции торжества. Поэтому не забудьте вернуться на этот сайт, чтобы по активной кнопке "СКАЧАТЬ" перейти на диск, и выбрать понравившиеся кадры :)</p>
-        <a href="#" class="btn">СКАЧАТЬ</a>
-        <p style="font-size: 14px; color: #999; margin-top: 10px;">(ссылка появится после свадьбы)</p>
+    <!-- QR-код для Telegram -->
+    <div class="section qr-section">
+        <h2>Делитесь фото и видео</h2>
+        <p>Присоединяйтесь к нашему Telegram-каналу, чтобы загружать свои снимки и видеть фото других гостей</p>
+        <div class="qr-placeholder">
+            <i class="fab fa-telegram"></i>
+            <p>Ваш QR-код будет здесь</p>
+        </div>
+        <p>Ссылка: <strong>t.me/vasha_gruppa</strong></p>
+        <p style="font-size: 14px; color: #666;">(замените на вашу ссылку)</p>
     </div>
-
-    <div class="quote">“Двоим лучше, нежели одному; потому что у них есть доброе вознаграждение в труде их”</div>
 
     <div class="section">
         <div class="section-title">Памятка для гостей</div>
         <ul class="reminder-list">
-            <li><strong>Цветы и подарки</strong> Будем рады цветам и признательны за подарки в конвертах (вклад в бюджет молодой семьи).</li>
-            <li><strong>Дети</strong> Наш формат не предполагает детской площадки. По возможности, проведите этот вечер без детей.</li>
+            <li><strong>Цветы и подарки</strong> Самое главное — будьте с нами в этот день! А если хотите порадовать нас, лучшим подарком станут ваше внимание и, возможно, помощь в создании нашего семейного уюта. Живые цветы просим не дарить — они завянут, а память об этом дне останется с нами.</li>
             <li><strong>Паркинг</strong> Рядом с локацией есть платные городские парковки.</li>
         </ul>
     </div>
@@ -126,8 +171,30 @@
     </div>
 
     <div class="section">
-        <div class="deadline">Просим вас подтвердить свое желание до 1 августа 2026 включительно.</div>
-        <div class="signature">с любовью,<br>Дмитрий & Александра</div>
+        <h2>Подтверждение присутствия</h2>
+        <p>Пожалуйста, дайте нам знать до 1 августа 2026</p>
+        <div style="max-width:500px; margin:30px auto; padding:30px; background:rgba(255,255,255,0.8); border-radius:15px;">
+            <form id="rsvpForm">
+                <div style="margin-bottom:20px; text-align:left;">
+                    <label style="display:block; margin-bottom:5px;">Ваше имя *</label>
+                    <input type="text" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                </div>
+                <div style="margin-bottom:20px; text-align:left;">
+                    <label style="display:block; margin-bottom:5px;">Вы придете? *</label>
+                    <select style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                        <option>Да, с радостью</option>
+                        <option>К сожалению, нет</option>
+                        <option>Пока не уверен(а)</option>
+                    </select>
+                </div>
+                <div style="margin-bottom:20px; text-align:left;">
+                    <label style="display:block; margin-bottom:5px;">Количество гостей</label>
+                    <input type="number" min="1" value="1" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+            <p style="font-size:14px; color:#666; margin-top:20px;">* Пока данные никуда не отправляются. Настройте Formspree или Google Forms для получения ответов.</p>
+        </div>
     </div>
 
     <footer>
